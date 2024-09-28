@@ -1,0 +1,162 @@
+/* General reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #5e72eb, #f4f4f5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+/* App Container with Glassmorphism */
+.app {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    width: 350px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.app:hover {
+    transform: translateY(-10px);
+}
+
+h1 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Input Container */
+.input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#location-input {
+    width: 70%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+#location-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#location-input:focus {
+    border-color: #5e72eb;
+    box-shadow: 0 0 10px rgba(94, 114, 235, 0.8);
+}
+
+button {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #3a7bd5, #5e72eb);
+    transform: translateY(-5px);
+}
+
+/* Weather Information Display */
+.weather-info {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    color: #fff;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.weather-info h2 {
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.weather-info p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.weather-info p#temperature {
+    font-size: 38px;
+    font-weight: 700;
+    color: #5e72eb;
+}
+
+.weather-info p#condition {
+    font-size: 20px;
+    color: #ccc;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .app {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #location-input {
+        width: 60%;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .weather-info h2 {
+        font-size: 22px;
+    }
+
+    .weather-info p#temperature {
+        font-size: 34px;
+    }
+}
